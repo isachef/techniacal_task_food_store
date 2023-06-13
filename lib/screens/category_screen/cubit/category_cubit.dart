@@ -8,7 +8,7 @@ part 'category_state.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit() : super(CategoryInitial());
 
-  CategoryRepository _categoryRepository = CategoryRepository();
+  final CategoryRepository _categoryRepository = CategoryRepository();
   late DishModel _dishModel;
 
   Future<void> fetchDishes() async {

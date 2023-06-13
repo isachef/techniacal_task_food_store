@@ -1,44 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tt_food_shop/screens/bin_screen/bin_screen.dart';
-import 'package:tt_food_shop/screens/category_screen/category_screen.dart';
 import 'package:tt_food_shop/screens/main_screen/main_screen.dart';
 
-// class BottomBarScreen extends StatefulWidget {
-//   const BottomBarScreen({Key? key, this.currentTab}) : super(key: key);
-//   final int? currentTab;
-//
-//   @override
-//   State<BottomBarScreen> createState() => _BottomBarScreenState();
-// }
-//
-// class _BottomBarScreenState extends State<BottomBarScreen> {
-//   int selectedIndex = 0;
-//
-//   void _onItemTapped(int index) {
-//     setState(() {
-//       selectedIndex = index;
-//     });
-//   }
-//
-//   // final List _widgetOptions = [
-//   //   const MainScreen(),
-//   //   const CategoryScreen(),
-//   //   // const MainScreen(),
-//   //   // const MainScreen(),
-//   //
-//   //   // const LocationScreen(),
-//   //   // const EpisodeScreen(),
-//   // ];
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       // body: _widgetOptions.elementAt(selectedIndex),
-//       // bottomNavigationBar: buildBottomNavigationBar(context),
-//     );
-//   }
-//
-// }
+
 BottomNavigationBar buildBottomNavigationBar(BuildContext context,  final int selectedIndex) {
   return BottomNavigationBar(
     items: [
@@ -78,30 +42,6 @@ BottomNavigationBar buildBottomNavigationBar(BuildContext context,  final int se
     currentIndex: selectedIndex,
     onTap: (index) {
         switch (index) {
-          // case 0:
-          //   Navigator.pushNamedAndRemoveUntil(
-          //       context,
-          //       "mainSreen",
-          //           (Route route) => true);
-          //   break;
-          // case 1:
-          //   Navigator.pushNamedAndRemoveUntil(
-          //       context,
-          //       "categoryScreen",
-          //           (Route route) => false);
-          //   break;
-          // case 2:
-          //   Navigator.pushNamedAndRemoveUntil(
-          //       context,
-          //       "mainSreen",
-          //           (Route route) => false);
-          //   break;
-          // case 3:
-          //   Navigator.pushNamedAndRemoveUntil(
-          //       context,
-          //       "mainSreen",
-          //           (Route route) => false);
-          //   break;
           case 0: Navigator.pushAndRemoveUntil(context, PageRouteBuilder(pageBuilder: (_, __, ___) => MainScreen()), ModalRoute.withName("/mainSreen")); break;
           case 2: Navigator.pushAndRemoveUntil(context, PageRouteBuilder(pageBuilder: (_, __, ___) => BinScreen()), ModalRoute.withName("/binScreen")); break;
         }
